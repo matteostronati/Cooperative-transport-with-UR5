@@ -21,7 +21,7 @@ The main goal is to maintain a **fixed distance of 1 meter** along the y-axis an
   - `matplotlib`  
   - `rclpy`  
   - `datetime`  
-  - `csv`ù
+  - `csv`
 ## Script Structure
 The main package is `ur5_custom_control` and contains four key scripts:
 
@@ -51,7 +51,7 @@ The main package is `ur5_custom_control` and contains four key scripts:
 ### 2. Launch robot drivers
  `ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true`
 ### 3. Teach Pendant 
-On the Teach Pendant of the robot, run the '.urcap' file for External Control.
+On the Teach Pendant of the robot, run the `.urcap` file for External Control.
 ### 4. Launch MoveIt for the kinematics services
 `ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur5 use_fake_hardware:=false`
 ### 5. Launch Intel Realsense drivers with pointcloud
@@ -63,7 +63,8 @@ On the Teach Pendant of the robot, run the '.urcap' file for External Control.
     unite_imu_method:=linear_interpolation \
     enable_sync:=true \
     align_depth.enable:=true \
-    device_type:=d435i ```
+    device_type:=d435i
+```
 
 ### 6. Run the main scripts in order
 Open **three separate terminals**, all positioned in the ROS2 workspace, and run each script:
