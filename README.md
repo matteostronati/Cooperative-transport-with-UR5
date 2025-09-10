@@ -49,13 +49,13 @@ The main package is `ur5_custom_control` and contains four key scripts:
 - Connect the **Intel Realsense D435i** camera via **USB**.  
 - Make sure PC and UR5 are on the **same subnet** (compatible IP addresses).
 ### 2. Launch robot drivers
- - 'ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true'
+ 'ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true'
 ### 3. Teach Pendant 
- - On the Teach Pendant of the robot, run the '.urcap' file for External Control.
+On the Teach Pendant of the robot, run the '.urcap' file for External Control.
 ### 4. Launch MoveIt for the kinematics services
- - `ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur5 use_fake_hardware:=false`
+`ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur5 use_fake_hardware:=false`
 ### 5. Launch Intel Realsense drivers with pointcloud
- - ```
+```
     ros2 launch realsense2_camera rs_launch.py \
     depth_module.profile:=640x480x30 \
     rgb_camera.profile:=640x480x30 \
