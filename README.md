@@ -49,18 +49,13 @@ The main package is `ur5_custom_control` and contains four key scripts:
 - Connect the **Intel Realsense D435i** camera via **USB**.  
 - Make sure PC and UR5 are on the **same subnet** (compatible IP addresses).
 ### 2. Launch robot drivers
- - Driver for UR5 with the command ```bash
-ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true
-## Utilizzo
-- Collegamento via Ethernet tra UR5 e Computer con ROS2
-- Collegamento via USB tra Intel Realsense e Computer con ROS2
-- Impostare indirizzi IP compatibili tra Computer e UR5, in modo che siano nella stessa maschera
-- Lanciare i driver per l'UR5 con il comando `ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true`
-- Eseguire dal Teach Pendant del robot il file .urcap per l'External Control
-- Lanciare moveit per avere accesso ai servizi di cinematica diretta e inversa con 
-`ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur5 use_fake_hardware:=false`
-- Lanciare i driver per la telecamera Intel Realsense D435i con la pointcloud disponibile con il comando:  
-    ```
+ - 'ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true'
+### 3. Teach Pendant 
+ - On the Teach Pendant of the robot, run the '.urcap' file for External Control.
+### 4. Launch MoveIt for the kinematics services
+ - `ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:=ur5 use_fake_hardware:=false`
+### 5. Launch Intel Realsense drivers with pointcloud
+ - ```
     ros2 launch realsense2_camera rs_launch.py \
     depth_module.profile:=640x480x30 \
     rgb_camera.profile:=640x480x30 \
@@ -69,9 +64,12 @@ ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.
     enable_sync:=true \
     align_depth.enable:=true \
     device_type:=d435i
-- Lanciare i tre script, posizionandosi all'interno del workspace secondo questa sequenza:  
-1. `ros2 run ur5_custom_control red_dot_tracker`
-2. `ros2 run ur5_custom_control trajectory_sender`
-3. `ros2 run ur5_custom_control mover`
-- Premere Ctrl+C nel terminale per fermare l'esecuzione e eseguire il comando `ros2 run ur5_custom_control plot_error` per visualizzare i grafici dell'errore
+### 6. Run the main scripts in order
+Open **three separate terminals**, all positioned in the ROS2 workspace, and run each script:
+   - `ros2 run ur5_custom_control red_dot_tracker`
+   - `ros2 run ur5_custom_control trajectory_sender`
+   - `ros2 run ur5_custom_control mover`
+### 7. Analyze performance
+  - Press **Ctrl+C** to stop execution.
+  - Visualize tracking errors with command `ros2 run ur5_custom_control plot_error` 
 
