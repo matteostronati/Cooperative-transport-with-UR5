@@ -1,4 +1,4 @@
-# Cooperative transport with UR5
+# Cooperative transport with robot UR5
 ## Description
 This project implements a collaborative co-transport system between a human operator and a UR5 robotic arm using **ROS2 Humble**.  
 The robot follows the human’s movements by tracking a **red marker** placed on a flexible sheet, detected through an **Intel Realsense D435i** depth camera mounted on the end-effector.  
