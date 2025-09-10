@@ -10,11 +10,18 @@ The main goal is to maintain a **fixed distance of 1 meter** along the y-axis an
 - **Safety constraints** on joint positions and velocities to prevent abrupt or unsafe motions.  
 - **Logging and performance analysis**, with error visualization through plots.
 
-## Requisiti
-- Ubuntu versione 22.04 LTS 
-- ROS2 Humble
-- Driver ROS2 per UR5 (compreso moveit) e Intel Realsense
-- Librerie Python (numpy, matplotlib, rclpy, datetime, csv)
+## Requirements
+- **Operating System:** Ubuntu 22.04 LTS  
+- **Framework:** ROS2 Humble  
+- **Robot Drivers:**  
+  - [UR ROS2 Driver (including MoveIt)](https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/humble)  
+  - [Intel Realsense ROS2 Driver](https://github.com/IntelRealSense/realsense-ros)
+- **Python libraries:**  
+  - `numpy`  
+  - `matplotlib`  
+  - `rclpy`  
+  - `datetime`  
+  - `csv`
 ## Utilizzo
 - Collegamento via Ethernet tra UR5 e Computer con ROS2
 - Collegamento via USB tra Intel Realsense e Computer con ROS2
