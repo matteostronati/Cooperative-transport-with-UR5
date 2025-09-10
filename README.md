@@ -76,5 +76,7 @@ Open **three separate terminals**, all positioned in the ROS2 workspace, and run
    - `ros2 run ur5_custom_control mover`
 ### 7. Analyze performance
   - Press **Ctrl+C** to stop execution.
-  - Visualize tracking errors with command `ros2 run ur5_custom_control plot_error` 
+  - Visualize tracking errors with command `ros2 run ur5_custom_control plot_error`
+    ## Full Report
+    For a detailed explanation of the project in Italian, you can refer to the [full report (PDF)](RELAZIONE_COTRASPORTO_UR5.pdf) included in this repository.
 
