@@ -1,7 +1,15 @@
-# Co-trasporto collaborativo Umano-Robot: implementazione in ROS2 con UR5 e inseguimento visivo con telecamera di profondità
-## Descrizione breve
-Il software consiste in un sistema di controllo robotico in ROS2 che abilita il co-trasporto di un telo tra operatore umano e UR5, utilizzando l'inseguimento visivo grazie a una telecamera di profondità Intel Realsense D435i montata sul braccio robotico.
-Le caratteristiche principali sono l'integrazione del riconoscimento visivo del punto rosso, controllo cinematico del robot per l'inseguimento di un target mantenedo una distanza di un metro dal punto rosso con orientamento fisso dell'end effector, implementazione di vincoli di sicurezza sui movimenti dei giunti e velocità, logging e analisi delle prestazioni mostrando gli errori in dei grafici.
+# Cooperative transport with UR5
+## Description
+This project implements a collaborative co-transport system between a human operator and a UR5 robotic arm using **ROS2 Humble**.  
+The robot follows the human’s movements by tracking a **red marker** placed on a flexible sheet, detected through an **Intel Realsense D435i** depth camera mounted on the end-effector.  
+
+The main goal is to maintain a **fixed distance of 1 meter** along the y-axis and a **constant orientation** with respect to the target. To ensure safe and smooth human-robot interaction, an algorithm was implemented that, based on the maximum linear velocity (0.1 m/s), computes the maximum distancethe robot can travel within the timer interval (0.4 s). This results in reaching an **intermediate calculated position** along the planned trajectory. In addition, a control mechaninsm was introduced to limit joint angle variations, ensuring that the robot always ramains in a safe configuration.
+### Key Features
+- **Real-time visual tracking** of a red marker for reference point detection.  
+- **Modular kinematic control** to maintain predefined distance and orientation.  
+- **Safety constraints** on joint positions and velocities to prevent abrupt or unsafe motions.  
+- **Logging and performance analysis**, with error visualization through plots.
+
 ## Requisiti
 - Ubuntu versione 22.04 LTS 
 - ROS2 Humble
