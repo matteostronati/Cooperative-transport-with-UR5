@@ -22,7 +22,7 @@ The main goal is to maintain a **fixed distance of 1 meter** along the y-axis an
   - `rclpy`  
   - `datetime`  
   - `csv`
-## Script Structure
+## Scripts Structure
 The main package is `ur5_custom_control` and contains four key scripts:
 
 1. **`red_dot_tracker`**  
