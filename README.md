@@ -23,7 +23,7 @@ The main goal is to maintain a **fixed distance of 1 meter** along the y-axis an
   - `datetime`  
   - `csv`
 ## Script Structure
-The main package is `ur5_custom_control` and contains four key scripts, the general architecture is shown in the image below:
+The main package is `ur5_custom_control` and contains four key scripts:
 
 1. **`red_dot_tracker`**  
    - Detects the red marker on the sheet using the Intel Realsense D435i.  
@@ -43,7 +43,8 @@ The main package is `ur5_custom_control` and contains four key scripts, the gene
 4. **`plot_error`**  
    - Reads log files from the executed trajectory.  
    - Generates plots showing tracking errors for performance analysis.
-
+   - 
+The **general architecture of the nodes** is shown in the image below:
 ![Architecture of the system](architecture.png)
 ## Usage
 ### 1. Hardware setup
