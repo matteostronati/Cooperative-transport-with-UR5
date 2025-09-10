@@ -21,7 +21,28 @@ The main goal is to maintain a **fixed distance of 1 meter** along the y-axis an
   - `matplotlib`  
   - `rclpy`  
   - `datetime`  
-  - `csv`
+  - `csv`ù
+## Script Structure
+The main package is `ur5_custom_control` and contains four key scripts:
+
+1. **`red_dot_tracker`**  
+   - Detects the red marker on the sheet using the Intel Realsense D435i.  
+   - Computes the 3D position of the marker relative to the robot's `base_link` frame and publishes it on a ROS2 topic.
+
+2. **`trajectory_sender`**  
+   - Receives the 3D target position from `red_dot_tracker` relative to the `base_link`.  
+   - Computes the robot trajectory to follow the target while maintaining a 1-meter offset along the y-axis.  
+   - Calculates intermediate positions along the planned path to ensure smooth motion, taking into account the maximum linear velocity (0.1 m/s) and the timer          interval (0.4 s).  
+   - Implements all safety conditions, including limiting joint angle variations and enforcing velocity constraints, ensuring the robot remains in a safe               configuration throughout the motion.
+
+3. **`mover`**  
+   - Executes the calculated trajectory on the UR5.  
+   - Controls the end-effector to maintain fixed orientation and distance.  
+   - Applies safety constraints on joint angles and velocities to prevent abrupt or unsafe motions.
+
+4. **`plot_error`**  
+   - Reads log files from the executed trajectory.  
+   - Generates plots showing tracking errors for performance analysis.
 ## Utilizzo
 - Collegamento via Ethernet tra UR5 e Computer con ROS2
 - Collegamento via USB tra Intel Realsense e Computer con ROS2
