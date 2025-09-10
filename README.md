@@ -49,7 +49,7 @@ The main package is `ur5_custom_control` and contains four key scripts:
 - Connect the **Intel Realsense D435i** camera via **USB**.  
 - Make sure PC and UR5 are on the **same subnet** (compatible IP addresses).
 ### 2. Launch robot drivers
- 'ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true'
+ `ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true`
 ### 3. Teach Pendant 
 On the Teach Pendant of the robot, run the '.urcap' file for External Control.
 ### 4. Launch MoveIt for the kinematics services
@@ -63,7 +63,8 @@ On the Teach Pendant of the robot, run the '.urcap' file for External Control.
     unite_imu_method:=linear_interpolation \
     enable_sync:=true \
     align_depth.enable:=true \
-    device_type:=d435i
+    device_type:=d435i ```
+
 ### 6. Run the main scripts in order
 Open **three separate terminals**, all positioned in the ROS2 workspace, and run each script:
    - `ros2 run ur5_custom_control red_dot_tracker`
