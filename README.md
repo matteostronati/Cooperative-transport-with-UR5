@@ -43,6 +43,14 @@ The main package is `ur5_custom_control` and contains four key scripts:
 4. **`plot_error`**  
    - Reads log files from the executed trajectory.  
    - Generates plots showing tracking errors for performance analysis.
+## Usage
+### 1. Hardware setup
+- Connect the **UR5 robot** to your computer via **Ethernet**.  
+- Connect the **Intel Realsense D435i** camera via **USB**.  
+- Make sure PC and UR5 are on the **same subnet** (compatible IP addresses).
+### 2. Launch robot drivers
+ - Driver for UR5 with the command ```bash
+ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5 robot_ip:=192.168.1.102 launch_rviz:=true
 ## Utilizzo
 - Collegamento via Ethernet tra UR5 e Computer con ROS2
 - Collegamento via USB tra Intel Realsense e Computer con ROS2
