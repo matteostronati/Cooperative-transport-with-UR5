@@ -82,4 +82,8 @@ Watch the system in action on YouTube:
 https://youtu.be/9Lswi4KnpA4
 ## Full Report
 For a detailed explanation of the project in Italian, you can refer to the [full report (PDF)](RELAZIONE_COTRASPORTO_UR5.pdf) included in this repository.
+## Authors
+- Edoardo Palmoni
+- Matteo Stronati
+- Jacopo Tarulli
 
