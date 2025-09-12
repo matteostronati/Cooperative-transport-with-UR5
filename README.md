@@ -77,6 +77,9 @@ Open **three separate terminals**, all positioned in the ROS2 workspace, and run
 ### 7. Analyze performance
   - Press **Ctrl+C** to stop execution.
   - Visualize tracking errors with command `ros2 run ur5_custom_control plot_error`
+## Demonstration video
+Watch the system in action on YouTube:
+https://youtu.be/9Lswi4KnpA4
 ## Full Report
 For a detailed explanation of the project in Italian, you can refer to the [full report (PDF)](RELAZIONE_COTRASPORTO_UR5.pdf) included in this repository.
 
